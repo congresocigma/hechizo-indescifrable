@@ -1,0 +1,11 @@
+{
+  "rules": {
+    "rooms": {
+      "$code": {
+        ".read": "auth != null",
+        ".write": "auth != null && $code.matches(/^[A-HJ-NP-Z2-9]{6}$/)",
+        ".validate": "newData.hasChildren(['hostUid', 'phase', 'createdAt', 'teams']) && newData.child('phase').isString() && (newData.child('phase').val() == 'lobby' || newData.child('phase').val() == 'playing' || newData.child('phase').val() == 'finished') && newData.child('hostUid').isString()"
+      }
+    }
+  }
+}

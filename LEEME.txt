@@ -1,0 +1,56 @@
+EL HECHIZO INDESCIFRABLE — JACK MORTIS
+====================================
+
+QUÉ HACE
+- Cada grupo elige desde su celular: Brujos, Fantasmas, Vampiros o Licántropos.
+- Los 10 acertijos aparecen de a uno, en el mismo orden para todos.
+- Acepta respuestas sin tildes ni distinción entre mayúsculas y minúsculas.
+- Respuesta correcta: +5 segundos; con una pista: +3; con dos pistas: +1.
+- El equipo que resuelve el décimo enigma finaliza AUTOMÁTICAMENTE la partida para todos.
+- "Juego finalizado" siempre aparece durante la partida, con confirmación antes de cerrarla.
+- Marcador en vivo, resultados finales y explicaciones de todas las soluciones.
+
+IMPORTANTE
+Sin configurar Firebase, el sitio se abre en MODO DEMO y funciona únicamente
+entre pestañas del mismo navegador: no sincroniza celulares distintos.
+Para la juntada real hay que activar la base de datos (gratis dentro de los
+límites del plan Spark de Firebase).
+
+PASO A PASO PARA SINCRONIZAR LOS 4 CELULARES
+1. Entrá a https://console.firebase.google.com/
+2. Creá un proyecto de Firebase (plan Spark / sin facturación).
+3. En la consola del proyecto, agregá una app Web (ícono </>).
+4. Copiá los datos de firebaseConfig que te muestra Firebase y pegá los
+   valores correspondientes dentro de firebase-config.js.
+   IMPORTANTE: "databaseURL" no siempre aparece hasta crear la base de datos.
+5. En Build > Realtime Database > Crear base de datos, elegí una región y
+   el modo bloqueado. Luego copiá la URL de esa base al campo databaseURL.
+6. En Realtime Database > Reglas, pegá el contenido de database.rules.json
+   (sin modificarlo) y publicá las reglas.
+7. En Build > Authentication > Sign-in method > Anonymous (Anónimo) > Habilitar.
+8. Subí los archivos index.html, app.js, styles.css, firebase-config.js y la
+   carpeta assets/ a un repositorio GitHub y publicalo con Vercel, o con GitHub Pages.
+   Es una página web estática; no necesita instalar dependencias.
+9. Abrí el enlace de la web en un celular: "Crear una sala". Compartí el
+   enlace (contiene un código de 6 caracteres) por WhatsApp.
+10. Cada equipo entra en su propio celular y elige su grupo. El anfitrión
+    puede comenzar cuando se conectan los cuatro equipos.
+
+PRUEBA SIN FIREBASE
+- Publicá la carpeta en Vercel o levantá un servidor local con
+    python -m http.server 8080
+- Abrí el sitio y tocá Crear sala. Podés abrir otras pestañas desde el
+  mismo navegador y escribir el código de sala para simular los equipos.
+- OJO: esa prueba local no conecta teléfonos diferentes.
+
+ACLARACIÓN DE SEGURIDAD
+Esta aplicación está pensada para un juego privado de amigos. Las reglas
+requieren autenticación anónima y un código de sala, pero NO impiden que
+alguien que conozca el código y manipule las peticiones modifique puntajes.
+Tampoco es un sistema de examen seguro: las soluciones están en el código.
+Para una juntada entre amigos esto suele ser suficiente, no para competencias
+con premios de valor.
+
+La configuración web de Firebase (apiKey, appId, etc.) NO es una contraseña:
+la protección real se basa en las reglas de la base de datos. Nunca incluyas
+claves privadas ni credenciales de cuentas de servicio.

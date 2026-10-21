@@ -1,0 +1,34 @@
+<!doctype html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#1b1523" />
+  <meta name="description" content="El Hechizo Indescifrable: cuatro equipos, diez acertijos, una carrera por los segundos del Rosco Final." />
+  <title>El Hechizo Indescifrable · Jack Mortis</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="ambient" aria-hidden="true"></div>
+  <div class="app-shell">
+    <header class="masthead">
+      <div class="brand-lockup">
+        <span class="eyebrow">UNA NOCHE PARA MORIRSE · JACK MORTIS PRESENTA</span>
+        <div class="brand-title">El Hechizo <em>Indescifrable</em></div>
+      </div>
+      <div class="masthead-actions">
+        <button class="sound-switch" id="sound-toggle" type="button" title="Activar o desactivar sonidos" aria-label="Activar sonidos">♪ <span>Sonido apagado</span></button>
+      </div>
+    </header>
+    <main id="app" aria-live="polite">
+      <section class="loading-card">Abriendo las puertas de la mansión…</section>
+    </main>
+    <footer class="site-footer"><span>✦</span> Diez hechizos · Cuatro equipos · Cada segundo cuenta <span>✦</span></footer>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script type="module" src="app.js"></script>
+</body>
+</html>
