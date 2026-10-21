@@ -47,7 +47,7 @@ function playTone(kind='good'){
   }catch(_e){}
 }
 document.getElementById('sound-toggle').addEventListener('click',event=>{sound=!sound;event.currentTarget.innerHTML=sound?'♫ <span>Sonido activado</span>':'♪ <span>Sonido apagado</span>';if(sound)playTone();});
-function modeNote(){return isDemo?'<div class="notice">✦ Modo demostración: podés jugar en este navegador, pero <strong>no sincroniza teléfonos distintos</strong>. Para que jueguen los cuatro celulares, configurá Firebase con las instrucciones incluidas.</div>':'';}
+function modeNote(){return isDemo?'<div class="notice">✦ Modo demostración: la app de Firebase ya tiene sus datos cargados, pero falta ingresar la URL de Realtime Database en <strong>firebase-config.js</strong> y habilitar su autenticación y reglas. <strong>Todavía no sincroniza teléfonos distintos.</strong></div>':'';}
 function errText(error){const s=String(error?.message||error||'Error desconocido');if(s.includes('PERMISSION_DENIED')||s.includes('permission-denied'))return 'Firebase rechazó la conexión. Revisá las reglas de Realtime Database y la autenticación anónima.';if(s.includes('auth/operation-not-allowed'))return 'Tenés que activar el inicio de sesión Anónimo en Firebase Authentication.';return s;}
 async function initialize(){
   try{
